@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "addon_screen_key",
+    "author": "aloisleclet",
+    "version": "1.0.0",
+    "description": "Show your key pressed during your screen share & streams.",
+    "homepage_url": "https://github.com/aloisleclet/addon_screen_key",
+    "icons": {
+      "16": "./icons/on.png",
+      "128": "./icons/on.png"
+    },
+    "browser_action": {
+      "default_icon": "./icons/off.png",
+      "default_title": "disabled"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+              "*://*/*"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "*://*/*"
+    ]
+}
